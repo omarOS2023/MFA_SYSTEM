@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="images/fevicon.png" type="" />
+    <link rel="stylesheet" href="css/project2.css" />
+    <link rel="stylesheet" href="css/project.css" />
+    <link rel="stylesheet" href="book1.css" />
+    <title>TWD</title>
+    <style>
+      #overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(5px);
+        z-index: 1000;
+      }
+
+      #paymentPopup {
+        display: none;
+        position: fixed;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        z-index: 1001;
+        background: none;
+        border: none;
+        padding: 0;
+      }
+
+      .tv-frame {
+        position: relative;
+        width: 100%;
+        background: url("tv-frame.png") no-repeat center center;
+        background-size: contain;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 50px;
+        box-sizing: border-box;
+      }
+
+      .tv-screen {
+        width: 80%;
+        background: #f0f0f0;
+        border: 2px solid #4a704a;
+        padding: 20px;
+        text-align: center;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .tv-screen h3 {
+        font-size: 1.5rem;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .tv-screen .accepted-cards {
+        margin-bottom: 15px;
+        color: #666;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .tv-screen .accepted-cards .card-icon {
+        width: 35px;
+        height: 25px;
+      }
+
+      .tv-screen .input-group {
+        margin: 10px 0;
+        text-align: left;
+      }
+
+      .tv-screen label {
+        display: block;
+        color: #333;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .tv-screen input {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      .tv-screen .error {
+        color: red;
+        font-size: 0.8rem;
+        margin-top: 5px;
+        display: block;
+      }
+
+      .tv-screen .card-details {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .tv-screen button {
+        width: 60%;
+        padding: 10px;
+        margin-top: 20px;
+        background-color: #0a97b0;
+        color: #ffffff;
+        border: none;
+        border-radius: 4px;
+        font-size: 1.2rem;
+        cursor: pointer;
+      }
+
+      .tv-screen button:hover {
+        background-color: #08798d;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      #closePopup {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        color: #333;
+        z-index: 1002;
+      }
+
+      #closePopup:hover {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container7">
+      <div class="four"><h2>TWD</h2></div>
+      <div class="five">
+        <div><a class="specifc" href="home1.html">HOME</a></div>
+        <div><a class="specifc" href="project.html">SERVICES</a></div>
+        <div><a class="specifc" href="about.html">ABOUT</a></div>
+        <div><a class="specifc" href="contact.html">CONTACT US</a></div>
+        <div><a id="log" class="specifc" href="book.html">BOOK</a></div>
+        <div>
+          <a id="sign" class="specifc" href="home1.html">LOG OUT</a>
+        </div>
+      </div>
+    </div>
+    <div class="container14">
+      <div class="one">
+        <h2>Enter Your Trip Information</h2>
+      </div>
+      <div class="two">
+        <div class="continer">
+          <form onsubmit="test5(event)">
+            <label>From</label>
+            <input type="text" name="yourname" id="from" />
+            <span id="span22" style="color: red"></span><br /><br />
+            <label>To</label>
+            <input type="text" name="yourage" id="to" />
+            <span id="span23" style="color: red"></span><br /><br />
+            <label>Departure Date</label>
+            <input type="date" id="date" />
+            <span id="span24" style="color: red"></span><br /><br />
+            <label>Travel Time</label>
+            <input type="time" name="time" id="time" />
+            <span id="span25" style="color: red"></span><br /><br />
+            <input
+              type="button"
+              value="add"
+              id="adds"
+              class="button"
+              onclick="Validation5()"
+            />
+          </form>
+        </div>
+      </div>
+      <div class="three">
+        <img src="clock2.jpg" width="400px" height="350px" />
+      </div>
+    </div>
+    <div class="container15">
+      <div class="h1"><h2>Table Data</h2></div>
+      <table id="table" border="1">
+        <tr>
+          <th id="N">From</th>
+          <th id="age">To</th>
+          <th id="course">Date</th>
+          <th id="time">Time</th>
+          <th id="action">Action</th>
+        </tr>
+      </table>
+      <input type="button" id="delete" value="Delete All" />
+    </div>
+    <div class="container6">
+      <div class="one">Address</div>
+      <div class="two">Info</div>
+      <div class="three">Links</div>
+      <div class="four">Subscribe</div>
+      <div class="five"><a class="zer" href="http://">ismailla</a></div>
+      <div class="six">
+        <p>
+          <span class="set">
+            necessary, making this the first true generatoron the Internet. it
+            uses a dictionaryof over 200 Layin words, combined with a handful
+          </span>
+        </p>
+      </div>
+      <div class="seven">
+        <a class="zer" href="home1.html">Home</a>
+      </div>
+      <div class="eight">
+        <input type="email" placeholder="Enter email" id="in" />
+      </div>
+      <div class="nine">
+        <a class="zer" href="http://">Call +01 024671112</a>
+      </div>
+      <div class="ten"><a class="zer" href="about.html">About</a></div>
+      <div class="eleven">
+        <a class="zer" href="http://">twd12@gmail.com</a>
+      </div>
+      <div class="twelve"><a class="zer" href="project.html">Services</a></div>
+      <div class="thirteen">
+        <a href="#" class="sub">Subscribe</a>
+      </div>
+      <div class="fourteen">
+        <a href="http://"><img class="f" src="f.svg" alt="facbook link" /></a>
+        <a href="http://"><img class="i" src="i.svg" alt="instgram link" /></a>
+        <a href="http://"><img class="x" src="x.svg" alt="x link" /></a>
+        <a href="http://"><img class="l" src="l.svg" alt="linkedin link" /></a>
+      </div>
+      <div class="fifteen">
+        <a class="zer" href="contact.html">Contact Us</a>
+      </div>
+    </div>
+
+    <div id="overlay"></div>
+    <div id="paymentPopup">
+      <span id="closePopup">×</span>
+      <div class="tv-frame">
+        <div class="tv-screen">
+          <h3>Visa Payment Details</h3>
+          <div class="accepted-cards">
+            <span>We accept:</span>
+            <img src="visa.png" alt="Visa" class="card-icon" />
+            <img src="Mastercard.png" alt="Mastercard" class="card-icon" />
+          </div>
+          <div class="input-group" id="cardholder-group">
+            <label>Cardholder Name</label>
+            <input type="text" id="cardholder" placeholder="John Doe" />
+            <span id="cardholder-error" class="error"></span>
+          </div>
+          <div class="input-group" id="cardnumber-group">
+            <label>Card Number</label>
+            <input
+              type="text"
+              id="cardnumber"
+              placeholder="1234 5678 9012 3456"
+            />
+            <span id="cardnumber-error" class="error"></span>
+          </div>
+          <div class="card-details">
+            <div class="input-group" id="expiry-group">
+              <label>Expiration Date</label>
+              <input type="text" id="expiry" placeholder="MM/YY" />
+              <span id="expiry-error" class="error"></span>
+            </div>
+            <div class="input-group" id="cvv-group">
+              <label>CVV</label>
+              <input type="text" id="cvv" placeholder="123" />
+              <span id="cvv-error" class="error"></span>
+            </div>
+          </div>
+          <button type="button" id="pay-btn" onclick="validatePayment()">
+            Pay Now
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="task1.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Function to update the header based on login status
+        function updateHeader() {
+          const isLoggedIn = sessionStorage.getItem("isLoggedIn") === "true";
+          if (isLoggedIn) {
+            const logoutLink = document.querySelector("#sign");
+            logoutLink.addEventListener("click", function (event) {
+              event.preventDefault();
+              sessionStorage.removeItem("isLoggedIn");
+              sessionStorage.removeItem("username");
+              window.location.href = "login.html";
+            });
+
+            // Start the idle timeout functionality
+            startIdleTimer();
+          }
+        }
+
+        updateHeader();
+
+        // Close popup when clicking the 'X'
+        document
+          .getElementById("closePopup")
+          .addEventListener("click", hidePaymentPopup);
+      });
+
+      // Idle Timeout Logic
+      let idleTimeout;
+      const IDLE_TIME_LIMIT = 5 * 60 * 1000; // 5 minutes in milliseconds
+
+      function resetIdleTimer() {
+        // Clear the existing timeout
+        clearTimeout(idleTimeout);
+        // Set a new timeout for 5 minutes
+        idleTimeout = setTimeout(logoutUser, IDLE_TIME_LIMIT);
+      }
+
+      function logoutUser() {
+        // Clear sessionStorage and redirect to home page
+        sessionStorage.removeItem("isLoggedIn");
+        sessionStorage.removeItem("username");
+        window.location.href = "login.html";
+      }
+
+      function startIdleTimer() {
+        // Reset timer on user activity
+        const events = ["mousemove", "keydown", "click", "scroll"];
+        events.forEach((event) => {
+          document.addEventListener(event, resetIdleTimer);
+        });
+        // Start the timer initially
+        resetIdleTimer();
+      }
+
+      // Show payment popup
+      function showPaymentPopup() {
+        document.getElementById("overlay").style.display = "block";
+        document.getElementById("paymentPopup").style.display = "block";
+      }
+
+      // Hide payment popup
+      function hidePaymentPopup() {
+        document.getElementById("overlay").style.display = "none";
+        document.getElementById("paymentPopup").style.display = "none";
+        // Clear errors
+        document.getElementById("cardholder-error").textContent = "";
+        document.getElementById("cardnumber-error").textContent = "";
+        document.getElementById("expiry-error").textContent = "";
+        document.getElementById("cvv-error").textContent = "";
+      }
+
+      // Validate payment details
+      function validatePayment() {
+        const cardholder = document.getElementById("cardholder").value;
+        const cardnumber = document.getElementById("cardnumber").value;
+        const expiry = document.getElementById("expiry").value;
+        const cvv = document.getElementById("cvv").value;
+
+        const cardholderError = document.getElementById("cardholder-error");
+        const cardnumberError = document.getElementById("cardnumber-error");
+        const expiryError = document.getElementById("expiry-error");
+        const cvvError = document.getElementById("cvv-error");
+
+        let isValid = true;
+
+        if (!cardholder) {
+          cardholderError.textContent = "Cardholder name is required";
+          isValid = false;
+        } else {
+          cardholderError.textContent = "";
+        }
+
+        if (
+          !/^\d{4}\s?\d{4}\s?\d{4}\s?\d{4}$/.test(cardnumber.replace(/\s/g, ""))
+        ) {
+          cardnumberError.textContent = "Invalid card number (16 digits)";
+          isValid = false;
+        } else {
+          cardnumberError.textContent = "";
+        }
+
+        if (!/^(0[1-9]|1[0-2])\/?([0-9]{2})$/.test(expiry)) {
+          expiryError.textContent = "Invalid expiry date (MM/YY)";
+          isValid = false;
+        } else {
+          expiryError.textContent = "";
+        }
+
+        if (!/^\d{3}$/.test(cvv)) {
+          cvvError.textContent = "Invalid CVV (3 digits)";
+          isValid = false;
+        } else {
+          cvvError.textContent = "";
+        }
+
+        if (isValid) {
+          hidePaymentPopup();
+          addToTable();
+        }
+      }
+
+      // Function to add data to table
+      function addToTable() {
+        var fromval = document.getElementById("from").value;
+        var toval = document.getElementById("to").value;
+        var date2 = document.getElementById("date").value;
+        var time = document.getElementById("time").value;
+
+        var tr = document.createElement("tr");
+        tr.setAttribute("class", "trow");
+
+        var td1 = document.createElement("td");
+        td1.textContent = fromval;
+        var td2 = document.createElement("td");
+        td2.textContent = toval;
+        var td3 = document.createElement("td");
+        td3.textContent = date2;
+        var td4 = document.createElement("td");
+        td4.textContent = time;
+        var td5 = document.createElement("td");
+
+        var button = document.createElement("button");
+        button.textContent = "Delete";
+
+        button.addEventListener("click", function (event) {
+          tr.remove();
+        });
+
+        var deletes = document.getElementById("delete");
+        deletes.addEventListener("click", function (event) {
+          var rows = document.getElementsByClassName("trow");
+          while (rows.length > 0) {
+            rows[0].remove();
+          }
+        });
+
+        var table = document.getElementById("table");
+        table.append(tr);
+        tr.append(td1);
+        tr.append(td2);
+        tr.append(td3);
+        tr.append(td4);
+        td5.append(button);
+        tr.append(td5);
+
+        document.getElementById("from").value = "";
+        document.getElementById("to").value = "";
+        document.getElementById("date").value = "";
+        document.getElementById("time").value = "";
+      }
+    </script>
+  </body>
+</html>

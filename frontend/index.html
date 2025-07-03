@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sign Up</title>
+    <link rel="shortcut icon" href="images/fevicon.png" type="" />
+    <link rel="stylesheet" href="sign.css" />
+  </head>
+  <body>
+    <div class="container7">
+      <div class="four"><h2></h2></div>
+      <div class="five">
+        <div><a class="specifc" href="home1.html">HOME</a></div>
+        <div><a class="specifc" href="project.html">SERVICES</a></div>
+        <div><a class="specifc" href="about.html">ABOUT</a></div>
+        <div><a class="specifc" href="contact.html">CONTACT US</a></div>
+        <div><a id="log" class="specifc" href="login.html">LOG IN</a></div>
+        <div><a id="sign" class="specifc" href="index.html">SIGN UP</a></div>
+      </div>
+    </div>
+    <div class="container11" id="mainContent">
+      <div class="one"><h1>Sign up</h1></div>
+      <div class="camera-container">
+        <button
+          type="button"
+          id="cameraBtn"
+          class="circle-btn"
+          onclick="openCamera()"
+        >
+          <img src="camera.svg" alt="Camera Icon" class="btn-icon" />
+          <span>Open Camera</span>
+        </button>
+        <video
+          id="video"
+          width="220"
+          height="220"
+          autoplay
+          style="display: none"
+        ></video>
+        <img
+          id="captureIcon"
+          src="camera.svg"
+          alt="Capture Icon"
+          class="capture-icon"
+          onclick="captureImage()"
+          style="display: none"
+        />
+        <canvas
+          id="canvas"
+          width="220"
+          height="220"
+          style="display: none"
+        ></canvas>
+        <img
+          id="capturedImage"
+          style="display: none; width: 220px; height: 220px"
+        />
+        <span id="spanImage" style="color: red; display: none"></span>
+      </div>
+      <div class="two">
+        <form onsubmit="test(event)">
+          <div class="area">
+            <input
+              type="text"
+              class="email"
+              id="fname"
+              name="firstname"
+              placeholder="First Name"
+            />
+            <span id="span6" style="color: red"></span>
+          </div>
+          <div class="area">
+            <input
+              type="text"
+              class="email"
+              id="coun"
+              name="username"
+              placeholder="User Name"
+            />
+            <span id="span10" style="color: red"></span>
+          </div>
+          <div class="area">
+            <input
+              type="email"
+              class="email"
+              id="em"
+              name="email"
+              placeholder="Email"
+            />
+            <span id="span8" style="color: red"></span>
+          </div>
+        </form>
+      </div>
+      <div class="three">
+        <div class="area">
+          <input
+            type="text"
+            class="email"
+            id="lname"
+            name="lastname"
+            placeholder="Last Name"
+          />
+          <span id="span9" style="color: red"></span>
+        </div>
+        <div class="area">
+          <input
+            type="tel"
+            class="email"
+            id="ph"
+            name="phone"
+            placeholder="Phone Number"
+          />
+          <span id="span7" style="color: red"></span>
+        </div>
+        <div class="area">
+          <input
+            type="password"
+            class="email"
+            id="pass"
+            name="password"
+            placeholder="Password"
+          />
+          <span id="span11" style="color: red"></span>
+        </div>
+      </div>
+
+      <div class="four">
+        <div class="area">
+          <span id="span12" style="color: red"></span>
+        </div>
+        <div class="sub">
+          <input
+            id="sub"
+            type="submit"
+            value="Sign up"
+            onclick="Validation3()"
+          />
+        </div>
+        <div class="small">
+          Already have an account?
+          <a href="login.html" style="color: #04233b">Log in</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- OTP Popup -->
+    <div id="otpPopup" class="otp-popup">
+      <div class="otp-content">
+        <h2>Check your email</h2>
+        <div class="otp-inputs">
+          <input type="text" maxlength="1" class="otp-digit" />
+          <input type="text" maxlength="1" class="otp-digit" />
+          <input type="text" maxlength="1" class="otp-digit" />
+          <input type="text" maxlength="1" class="otp-digit" />
+          <input type="text" maxlength="1" class="otp-digit" />
+          <input type="text" maxlength="1" class="otp-digit" />
+        </div>
+        <span id="otpError" style="color: red; display: none"></span>
+        <button id="verifyBtn" onclick="verifyOTP()">Verify</button>
+      </div>
+    </div>
+
+    <script src="task1.js"></script>
+    <script>
+      // Run this when the page loads
+      window.onload = function () {
+        // Check if we need to clear the form and show the Open Camera button
+        if (sessionStorage.getItem("clearSignUpForm") === "true") {
+          // Clear the form inputs
+          document.getElementById("fname").value = "";
+          document.getElementById("lname").value = "";
+          document.getElementById("em").value = "";
+          document.getElementById("ph").value = "";
+          document.getElementById("pass").value = "";
+          document.getElementById("coun").value = "";
+          document.getElementById("capturedImage").style.display = "none";
+          window.capturedFile = null;
+
+          // Remove the flag from sessionStorage
+          sessionStorage.removeItem("clearSignUpForm");
+        }
+      };
+    </script>
+  </body>
+</html>

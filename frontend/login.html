@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login</title>
+    <link rel="shortcut icon" href="images/fevicon.png" type="" />
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <div class="container7">
+      <div class="four"><h2>TWD</h2></div>
+      <div class="five">
+        <div><a class="specifc" href="home1.html">HOME</a></div>
+        <div><a class="specifc" href="project.html">SERVICES</a></div>
+        <div><a class="specifc" href="about.html">ABOUT</a></div>
+        <div><a class="specifc" href="contact.html">CONTACT US</a></div>
+        <div><a id="log" class="specifc" href="login.html">LOG IN</a></div>
+        <div><a id="sign" class="specifc" href="index.html">SIGN UP</a></div>
+      </div>
+    </div>
+    <!---->
+    <div class="container10">
+      <div class="one"><h1>Welcome Back</h1></div>
+      <div class="camera-container">
+        <button
+          type="button"
+          id="cameraBtn"
+          class="circle-btn"
+          onclick="openCamera()"
+        >
+          <img src="camera.svg" alt="Camera Icon" class="btn-icon" />
+          <span>Open Camera</span>
+        </button>
+        <video
+          id="video"
+          width="220"
+          height="220"
+          autoplay
+          style="display: none"
+        ></video>
+        <img
+          id="captureIcon"
+          src="camera.svg"
+          alt="Capture Icon"
+          class="capture-icon"
+          onclick="captureImage()"
+          style="display: none"
+        />
+        <canvas
+          id="canvas"
+          width="220"
+          height="220"
+          style="display: none"
+        ></canvas>
+        <img
+          id="capturedImage"
+          style="display: none; width: 220px; height: 220px"
+        />
+        <span id="spanImage" style="color: red; display: none"></span>
+      </div>
+      <div class="two">
+        <form onsubmit="test(event)">
+          <div class="area">
+            <input
+              type="email"
+              class="email"
+              id="emlog"
+              name="email"
+              placeholder="Email"
+            />
+            <span id="span14" style="color: red"></span>
+          </div>
+          <div class="area">
+            <input
+              type="password"
+              class="email"
+              id="passlog"
+              name="password"
+              placeholder="Password"
+            />
+            <span id="span15" style="color: red"></span>
+          </div>
+          <div class="area">
+            <span id="span16" style="color: red"></span>
+          </div>
+
+          <div class="area">
+            <input
+              id="sub"
+              type="submit"
+              value="Log in"
+              onclick="Validation4()"
+            />
+          </div>
+          <div id="for">
+            or
+            <a href="forgetPassword.html" style="color: #04233b"
+              >Forget Password</a
+            >
+            <hr width="80%" />
+            Don't have an account?<a href="index.html" style="color: #04233b"
+              >Sign up</a
+            >
+          </div>
+        </form>
+      </div>
+
+      <!-- OTP Popup -->
+      <div class="otp-popup" id="otpPopup">
+        <div class="otp-content">
+          <h2>Enter OTP</h2>
+          <p>A verification code has been sent to your email.</p>
+          <div class="otp-inputs">
+            <input type="text" class="otp-digit" maxlength="1" />
+            <input type="text" class="otp-digit" maxlength="1" />
+            <input type="text" class="otp-digit" maxlength="1" />
+            <input type="text" class="otp-digit" maxlength="1" />
+            <input type="text" class="otp-digit" maxlength="1" />
+            <input type="text" class="otp-digit" maxlength="1" />
+          </div>
+          <span id="otpError" style="color: red; display: none"></span>
+          <button id="verifyBtn" onclick="verifyOTP2()">Verify</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="task1.js"></script>
+    <script>
+      // Run this when the page loads
+      window.onload = function () {
+        // Check if we need to clear the form and show the Open Camera button
+        if (sessionStorage.getItem("clearLoginForm") === "true") {
+          // Clear the form inputs
+          document.getElementById("emlog").value = "";
+          document.getElementById("passlog").value = "";
+          document.getElementById("capturedImage").style.display = "none";
+          window.capturedFile = null;
+
+          // Clear OTP inputs
+          const otpInputs = document.querySelectorAll(".otp-digit");
+          otpInputs.forEach((input) => (input.value = ""));
+
+          // Remove the flag from sessionStorage
+          sessionStorage.removeItem("clearLoginForm");
+        }
+      };
+    </script>
+  </body>
+</html>

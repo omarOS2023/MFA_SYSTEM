@@ -1,0 +1,617 @@
+/* General Styles for All Screen Sizes */
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #04233b 0%, #054d73 100%);
+  min-height: 100vh;
+  font-family: "Arial", sans-serif;
+}
+
+/* Header Styles */
+.container7 {
+  display: grid;
+  grid-template-rows: 76px;
+  grid-template-columns: 50% 25% 25%;
+  padding: 10px;
+  background-color: white;
+  row-gap: 5px;
+  box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.15);
+}
+
+.container7 .four {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  text-align: left;
+  margin-left: -10px;
+  padding-left: 20px;
+}
+
+.container7 .five {
+  grid-column: 2 / 4;
+  grid-row: 1 / 2;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+  padding-right: 20px;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+/* .container7 .five a {
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 12px 12px;
+  border-radius: 5px;
+  transition: all 0.3s;
+  border: 1px solid;
+  cursor: pointer;
+  font-weight: 400;
+  text-align: left;
+} */
+
+.container7 .five a {
+  color: black;
+  text-decoration: none;
+}
+
+.container7 .five a:hover {
+  color: rgb(0, 140, 255);
+  text-decoration: none;
+}
+
+.container7 .five #log {
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 12px 12px;
+  border-radius: 5px;
+  transition: all 0.3s;
+  border: 1px solid;
+  cursor: pointer;
+  font-weight: 400;
+  text-align: left;
+  background-color: white;
+  color: black;
+}
+
+.container7 .five #log:hover,
+.container7 .five #log:active {
+  background-color: #054d73;
+  color: white;
+}
+
+.container7 .five #sign {
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 12px 12px;
+  border-radius: 5px;
+  transition: all 0.3s;
+  border: 1px solid;
+  cursor: pointer;
+  font-weight: 400;
+  text-align: left;
+  background-color: #04233b;
+  color: white;
+}
+
+.container7 .five #sign:hover,
+.container7 .five #sign:active {
+  background-color: #054d73;
+}
+
+/* Form Container */
+.container11 {
+  width: 100%;
+  max-width: 600px;
+  margin: 40px auto;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.container11 .one {
+  text-align: left;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.container11 .one h1 {
+  font-size: 32px;
+}
+
+/* Camera Container */
+.container11 .camera-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+  min-height: 280px;
+  position: relative;
+}
+
+.container11 .camera-container .circle-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  height: 220px;
+  background-color: #04233b;
+  color: #ffffff;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: Arial, sans-serif;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+  margin: 10px 0;
+}
+
+.container11 .camera-container .circle-btn:hover {
+  background-color: #054d73;
+}
+
+.container11 .camera-container .circle-btn .btn-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.container11 .camera-container .circle-btn span {
+  text-align: center;
+}
+
+.container11 .camera-container #video,
+.container11 .camera-container #canvas,
+.container11 .camera-container #capturedImage {
+  display: block;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.container11 .camera-container #captureIcon {
+  display: block;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  bottom: 30px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.container11 .camera-container #spanImage {
+  margin-top: 10px;
+  font-size: 14px;
+  color: red;
+  text-align: center;
+}
+
+/* Inputs */
+.container11 .two,
+.container11 .three {
+  margin-bottom: 20px;
+}
+
+.container11 .two .area,
+.container11 .three .area {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.container11 .two .email,
+.container11 .three .email {
+  width: 100%;
+  height: 50px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 10px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.container11 .two .email:focus,
+.container11 .three .email:focus {
+  border-color: #04233b;
+  outline: none;
+  box-shadow: 0 0 5px rgba(4, 35, 59, 0.3);
+}
+
+.container11 .two .area span,
+.container11 .three .area span {
+  font-size: 14px;
+  color: red;
+  white-space: nowrap;
+}
+
+/* Submit Button */
+.container11 .four {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.container11 .four .area {
+  margin-bottom: 15px;
+}
+
+.container11 .four .sub {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.container11 .four #sub {
+  cursor: pointer;
+  background-color: #04233b;
+  color: #ffffff;
+  border-radius: 5px;
+  border: none;
+  font-size: 15px;
+  font-weight: 400;
+  width: 100%;
+  max-width: 340px;
+  height: 45px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.container11 .four #sub:hover,
+.container11 .four #sub:active {
+  background-color: #054d73;
+}
+
+.container11 .four .small {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 10px;
+  color: white;
+}
+
+.container11 .four .small a {
+  color: #ffd700;
+  text-decoration: none;
+}
+
+.container11 .four .small a:hover {
+  text-decoration: underline;
+}
+
+/* OTP Popup Styles */
+.otp-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.otp-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.otp-content h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #04233b;
+}
+
+.otp-inputs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.otp-digit {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.otp-digit:focus {
+  border-color: #04233b;
+  box-shadow: 0 0 5px rgba(4, 35, 59, 0.3);
+}
+
+#otpError {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+#verifyBtn {
+  background-color: #04233b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+#verifyBtn:hover {
+  background-color: #054d73;
+}
+
+/* Desktop Styles (min-width: 850px) */
+@media (min-width: 850px) {
+  .container11 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 20px;
+  }
+
+  .container11 .one {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+  }
+
+  .container11 .camera-container {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+  }
+
+  .container11 .two {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+
+  .container11 .three {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+  }
+
+  .container11 .four {
+    grid-column: 1 / 3;
+    grid-row: 4 / 5;
+  }
+}
+
+/* Tablet Styles (600px to 849px) */
+@media (min-width: 600px) and (max-width: 849px) {
+  .container7 {
+    grid-template-columns: 40% 30% 30%;
+    padding: 5px;
+  }
+
+  .container7 .five {
+    gap: 10px;
+    padding-right: 10px;
+  }
+
+  .container7 .five a {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .container11 {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  .container11 .one h1 {
+    font-size: 28px;
+  }
+
+  .container11 .camera-container .circle-btn {
+    width: 180px;
+    height: 180px;
+    font-size: 16px;
+  }
+
+  .container11 .camera-container .circle-btn .btn-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .container11 .camera-container #video,
+  .container11 .camera-container #canvas,
+  .container11 .camera-container #capturedImage {
+    width: 180px;
+    height: 180px;
+  }
+
+  .container11 .camera-container #captureIcon {
+    width: 35px;
+    height: 35px;
+    bottom: 20px;
+  }
+
+  .container11 .two .email,
+  .container11 .three .email {
+    max-width: 100%;
+    height: 45px;
+    font-size: 14px;
+  }
+
+  .container11 .four #sub {
+    max-width: 100%;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .container11 .four .small {
+    font-size: 11px;
+  }
+
+  .otp-content {
+    max-width: 350px;
+    padding: 15px;
+  }
+
+  .otp-content h2 {
+    font-size: 20px;
+  }
+
+  .otp-digit {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+
+  #verifyBtn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+/* Mobile Styles (max-width: 599px) */
+@media (max-width: 599px) {
+  .container7 {
+    grid-template-columns: 30% 35% 35%;
+    padding: 5px;
+  }
+
+  .container7 .four {
+    padding-left: 10px;
+  }
+
+  .container7 .five {
+    gap: 5px;
+    padding-right: 5px;
+  }
+
+  .container7 .five a {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .container11 {
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+    margin: 15px auto;
+    padding: 10px;
+  }
+
+  .container11 .one h1 {
+    font-size: 24px;
+  }
+
+  .container11 .camera-container {
+    min-height: 220px;
+  }
+
+  .container11 .camera-container .circle-btn {
+    width: 150px;
+    height: 150px;
+    font-size: 14px;
+  }
+
+  .container11 .camera-container .circle-btn .btn-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 5px;
+  }
+
+  .container11 .camera-container #video,
+  .container11 .camera-container #canvas,
+  .container11 .camera-container #capturedImage {
+    width: 150px;
+    height: 150px;
+  }
+
+  .container11 .camera-container #captureIcon {
+    width: 30px;
+    height: 30px;
+    bottom: 15px;
+  }
+
+  .container11 .two .area,
+  .container11 .three .area {
+    margin-bottom: 10px;
+  }
+
+  .container11 .two .email,
+  .container11 .three .email {
+    max-width: 100%;
+    height: 40px;
+    font-size: 13px;
+  }
+
+  .container11 .four {
+    margin-top: 10px;
+  }
+
+  .container11 .four #sub {
+    max-width: 100%;
+    height: 38px;
+    font-size: 13px;
+  }
+
+  .container11 .four .small {
+    font-size: 10px;
+  }
+
+  .otp-content {
+    max-width: 90%;
+    padding: 10px;
+  }
+
+  .otp-content h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .otp-inputs {
+    gap: 5px;
+    margin-bottom: 15px;
+  }
+
+  .otp-digit {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+
+  #otpError {
+    font-size: 12px;
+  }
+
+  #verifyBtn {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}

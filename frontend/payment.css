@@ -1,0 +1,224 @@
+@media (min-width: 850px) {
+  .container20 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 60px 0;
+  }
+
+  .container20 .one {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .container20 .one h2 {
+    font-size: 2rem;
+    color: #04233b;
+    font-weight: 700;
+  }
+
+  .container20 .two {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .container20 .payment-form {
+    width: 80%;
+    max-width: 600px;
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .container20 .accepted-cards {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 25px;
+  }
+
+  .container20 .accepted-cards span {
+    font-size: 0.9rem;
+    color: #666;
+    margin-right: 15px;
+  }
+
+  .container20 .accepted-cards .card-icon {
+    width: 35px;
+    height: 25px;
+    margin-left: 8px;
+  }
+
+  .container20 .payment-form label {
+    color: #04233b;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .container20 .payment-form .input-group {
+    position: relative;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+  }
+
+  .container20 .payment-form input {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    font-size: 1rem;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+  }
+
+  .container20 .payment-form input:focus {
+    border-color: #0a97b0;
+    box-shadow: 0 0 5px rgba(10, 151, 176, 0.5);
+  }
+
+  .container20 .payment-form .input-group::before {
+    content: "";
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  #cardholder-group::before {
+    background-image: url("user.svg");
+  }
+
+  #cardnumber-group::before {
+    background-image: url("card.svg");
+  }
+
+  #expiry-group::before {
+    background-image: url("calendar.svg");
+  }
+
+  #cvv-group::before {
+    background-image: url("lock.svg");
+  }
+
+  .container20 .card-details {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 20px;
+  }
+
+  .container20 .expiry,
+  .container20 .cvv {
+    flex: 1;
+  }
+
+  .container20 .error {
+    color: #ff4d4d;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: block;
+  }
+
+  .container20 #pay-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #0a97b0;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 20px;
+    box-sizing: border-box;
+  }
+
+  .container20 #pay-btn:hover {
+    background-color: #08798d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@media (max-width: 849px) {
+  .container20 {
+    margin: 30px 15px;
+  }
+
+  .container20 .one h2 {
+    font-size: 1.8rem;
+    color: #04233b;
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .container20 .two {
+    width: 100%;
+  }
+
+  .container20 .payment-form {
+    width: 100%;
+    padding: 20px;
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .container20 .accepted-cards {
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+
+  .container20 .accepted-cards .card-icon {
+    width: 30px;
+    height: 20px;
+    margin-left: 5px;
+  }
+
+  .container20 .payment-form label {
+    margin-bottom: 5px;
+  }
+
+  .container20 .payment-form .input-group {
+    margin-bottom: 15px;
+    box-sizing: border-box;
+  }
+
+  .container20 .payment-form input {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 10px 10px 10px 35px;
+    box-sizing: border-box;
+  }
+
+  .container20 .card-details {
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+
+  .container20 .expiry,
+  .container20 .cvv {
+    flex: none;
+  }
+
+  .container20 #pay-btn {
+    font-size: 0.9rem;
+    padding: 12px;
+    margin-top: 15px;
+    box-sizing: border-box;
+  }
+}
