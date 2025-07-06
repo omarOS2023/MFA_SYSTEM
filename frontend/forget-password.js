@@ -1,4 +1,4 @@
-const BASE_URL = "https://mfa-back.vercel.app//auth"; // Remove trailing slash
+const BASE_URL = "https://mfa-back.vercel.app/auth"; // Remove trailing slash
 
 function handleResetPassword(event) {
   event.preventDefault();
